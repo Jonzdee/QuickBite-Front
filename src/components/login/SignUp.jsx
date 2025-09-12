@@ -23,7 +23,7 @@ function SignUp({ className, ...props }) {
           )}
           {...props}
         >
-          <CardContent className="grid p-0 md:grid-cols-2">
+          <CardContent className="grid p-0 md:grid-cols-1">
             {/* Left side: form */}
             <motion.form
               className="p-6 md:p-6"
@@ -159,27 +159,6 @@ function SignUp({ className, ...props }) {
                 </motion.div>
               </div>
             </motion.form>
-
-            {/* Right side logo (hidden on mobile) */}
-            <motion.div
-              className="relative hidden md:flex items-center justify-center"
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-            >
-              <motion.img
-                src={QuickBite}
-                alt="QuickBite"
-                className="h-60 w-60 object-contain"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: [0, -10, 0] }}
-                transition={{
-                  duration: 4,
-                  ease: "easeInOut",
-                  repeat: Infinity,
-                }}
-              />
-            </motion.div>
           </CardContent>
         </Card>
       </motion.div>

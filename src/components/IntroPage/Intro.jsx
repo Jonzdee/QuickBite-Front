@@ -111,8 +111,12 @@ function IntroSlider() {
               </>
             )}
 
-            {/* Pagination Dots */}
-            <div className="flex justify-center gap-2 mt-4">
+           
+           
+          </motion.div>
+        </AnimatePresence>
+      </div>
+       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2">
               {introPages.map((page, i) => (
                 <button
                   key={page.id}
@@ -127,9 +131,6 @@ function IntroSlider() {
                 />
               ))}
             </div>
-          </motion.div>
-        </AnimatePresence>
-      </div>
     </div>
   );
 }

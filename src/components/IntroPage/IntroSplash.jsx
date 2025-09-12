@@ -7,10 +7,17 @@ function IntroSplash() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      navigate("/intro1"); // redirect to first intro page
-    }, 6000);
+    const showSplashOnce = localStorage.getItem("showSplashOnce");
 
+    if (showSplashOnce){
+      navigate("/intro1", {replace:true})
+      return;
+    }
+
+    const timer =setTimeout(()=>{
+      localStorage.setItem("showSplashOnce", "true")
+      navigate("/intro1", {replace: true})
+    }, 2000)
     return () => clearTimeout(timer);
   }, [navigate]);
 
