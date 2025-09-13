@@ -5,6 +5,7 @@ import IntroSplash from "./components/IntroPage/IntroSplash";
 import Home from "./pages/Customer/Home";
 import Login from "./components/login/Login"
 import SignUp from "./components/login/SignUp";
+import AllowLocation from "./components/login/AllowLocation";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/getlocation" element={<AllowLocation />} />
       </Routes>
     </BrowserRouter>
   );
