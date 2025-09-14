@@ -79,7 +79,7 @@ function AllowLocation({ className, ...props }) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
               >
-                <div className="bg-white shadow-lg px-4 py-2 rounded-full flex items-center gap-2">
+                <div className="bg-white px-4 py-2 rounded-full flex items-center gap-2">
                   {/* Location Icon */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -111,7 +111,7 @@ function AllowLocation({ className, ...props }) {
                 <img
                   src="https://i.pinimg.com/1200x/88/fd/ec/88fdec28e166d79bd5bfd7b7d319c888.jpg"
                   alt="Map Illustration"
-                  className="max-w-md h-64 object-contain opacity-90 rounded-xl shadow-md"
+                  className="max-w-md h-64 object-contain opacity-90 rounded-xl "
                 />
               </div>
 
@@ -124,7 +124,7 @@ function AllowLocation({ className, ...props }) {
               </div>
 
               {/* Buttons */}
-              <div className="w-full space-y-3 mt-4">
+              <div className=" grid grid-cols-1 gap-5 mt-4  sm:grid-cols-2 w-full">
                 <Button
                   onClick={getLocation}
                   disabled={loading}

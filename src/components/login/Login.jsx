@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import QuickBite from "../../assets/Images/QuickBiteLogo.png";
+
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 function Login({ className, ...props }) {
@@ -74,12 +74,12 @@ function Login({ className, ...props }) {
                 >
                   <div className="flex items-center">
                     <Label htmlFor="password">Password</Label>
-                    <a
+                    <Link
                       href="#"
                       className="ml-auto text-xs underline-offset-2 hover:underline"
                     >
                       Forgot password?
-                    </a>
+                    </Link>
                   </div>
                   <Input id="password" type="password" required />
                 </motion.div>
@@ -90,12 +90,14 @@ function Login({ className, ...props }) {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 }}
                 >
+                  <Link to="/getlocation">
                   <Button
                     type="submit"
                     className="w-full bg-orange-500 hover:bg-amber-700"
                   >
                     Login
                   </Button>
+                  </Link>
                 </motion.div>
 
                 {/* Divider */}
