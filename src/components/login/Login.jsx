@@ -74,12 +74,12 @@ function Login({ className, ...props }) {
                 >
                   <div className="flex items-center">
                     <Label htmlFor="password">Password</Label>
-                    <a
-                      href="#"
+                    <Link
+                      to="/forget-password"
                       className="ml-auto text-xs underline-offset-2 hover:underline"
                     >
                       Forgot password?
-                    </a>
+                    </Link>
                   </div>
                   <Input id="password" type="password" required />
                 </motion.div>
