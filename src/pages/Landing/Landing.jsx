@@ -1,7 +1,7 @@
 import Banner from '@/components/landingComponents/Banner'
 import Navbar from '@/components/landingComponents/Navbar'
 import Card from '@/components/landingComponents/Cards'
-import React from 'react'
+import Explore from "@/components/landingComponents/Explore"
 
 function Landing() {
   return (
@@ -9,6 +9,7 @@ function Landing() {
 <Navbar />
 <Banner />
 <Card />
+<Explore />
     </div>
   )
 }
