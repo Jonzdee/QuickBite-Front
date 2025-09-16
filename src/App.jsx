@@ -30,6 +30,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/landingpage" element={<Landing />} />
+        
       </Routes>
     </BrowserRouter>
   );

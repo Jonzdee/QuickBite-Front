@@ -59,7 +59,7 @@ export default function Navbar() {
             </div>
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            <Link to="/shop">
+            <Link to="/cart">
               <button
                 type="button"
                 className=" relative rounded-full p-1 text-orange-400 cursor-pointer"
