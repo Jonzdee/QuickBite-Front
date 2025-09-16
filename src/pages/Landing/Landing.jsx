@@ -6,6 +6,7 @@ import Feactured from '@/components/landingComponents/Feactured'
 import HandPick from "@/components/landingComponents/HandPick"
 import Discounts from "@/components/landingComponents/Discounts"
 import Product from "@/components/landingComponents/Product"
+import BannerAuto from '@/components/landingComponents/BannerAuto'
 
 function Landing() {
   return (
@@ -17,6 +18,7 @@ function Landing() {
 <Feactured />
 <HandPick />
 <Discounts />
+<BannerAuto />
 <Product />
     </div>
   )
