@@ -3,6 +3,7 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
+import { Link } from "react-router-dom";
 import "swiper/css/navigation";
 import { FaStar } from "react-icons/fa";
 import JustFood from "@/assets/vendorslogo/Just Food.png"
@@ -52,7 +53,12 @@ const items = [
  function HandPick() {
    return (
     <div className="container mx-auto px-4 py-6">
-      <h2 className="text-lg font-semibold mb-3">Handpick for you 💚</h2>
+      <div className="flex items-center justify-between py-5">
+              <h2 className="text-lg font-semibold">Open Restaurants 💚</h2>
+              <Link className="text-green-950 bg-gray-100 rounded-lg px-4 py-2">
+                View All
+              </Link>
+            </div>
       <Swiper
         modules={[Navigation]}
         spaceBetween={16}

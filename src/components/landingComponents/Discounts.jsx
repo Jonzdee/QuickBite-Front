@@ -59,7 +59,7 @@ function Discounts() {
     <div className="container mx-auto px-4 py-6">
       <div className="flex items-center justify-between py-5">
         <h2 className="text-lg font-semibold">Discounts 🛒</h2>
-        <Link className="text-green-950 bg-green-200 rounded-lg px-4 py-2">
+        <Link className="text-green-950 bg-gray-100 rounded-lg px-4 py-2">
           View All
         </Link>
       </div>
