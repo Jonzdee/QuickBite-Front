@@ -105,7 +105,7 @@ function Featured() {
                 className="w-full h-full object-cover"
               />
               {item.promo && (
-                <div className="absolute bottom-2 left-2 bg-orange-500/75 text-xs font-medium px-2 py-1 rounded-md shadow">
+                <div className="absolute bottom-2 left-2 bg-orange-500/75 text-white text-xs font-medium px-2 py-1 rounded-md shadow">
                   {item.promo}
                 </div>
               )}
