@@ -1,11 +1,12 @@
 import { FaUtensils, FaMotorcycle } from "react-icons/fa";
 import Rider from "@/assets/Images/rider.png"
 import IvoryBites from "@/assets/Images/IvoryBites.png"
+import { Link } from "react-router-dom";
 export default function PartnerRiderCTA() {
   return (
     <section className="bg-gray-50 py-20">
       <div className="max-w-6xl mx-auto px-6 space-y-16">
-        {/* Restaurant Partner */}
+
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div>
             <img
@@ -21,16 +22,16 @@ export default function PartnerRiderCTA() {
               Boost your sales by reaching thousands of hungry customers on
               QuickBite. Let us handle delivery while you focus on great food.
             </p>
-            <a
-              href="/partner"
+            <Link
+              to="/partner"
               className="inline-block bg-orange-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600 shadow"
             >
               Partner With Us
-            </a>
+            </Link>
           </div>
         </div>
 
-        {/* Rider CTA */}
+  
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div className="md:order-2">
             <img
@@ -48,12 +49,12 @@ export default function PartnerRiderCTA() {
               Join our rider community, deliver food around town, and earn
               money with flexible hours that fit your schedule.
             </p>
-            <a
-              href="/rider"
+            <Link
+              to="/rider"
               className="inline-block bg-orange-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600 shadow"
             >
               Join as a Rider
-            </a>
+            </Link>
           </div>
         </div>
       </div>

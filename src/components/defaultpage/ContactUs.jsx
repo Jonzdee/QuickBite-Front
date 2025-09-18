@@ -3,7 +3,7 @@ import React from "react";
 function ContactUs() {
   return (
     <section className="text-gray-600 body-font relative">
-      {/* Map */}
+     
       <div className="absolute inset-0">
         <iframe
           width="100%"
@@ -15,7 +15,7 @@ function ContactUs() {
         ></iframe>
       </div>
 
-      {/* Contact Form */}
+     
       <div className="container px-5 py-24 mx-auto flex">
         <div className="lg:w-1/3 md:w-1/2 bg-white rounded-lg p-8 relative z-10 shadow-lg ml-auto">
           <h2 className="text-gray-900 text-xl font-bold mb-4">Get In Touch</h2>

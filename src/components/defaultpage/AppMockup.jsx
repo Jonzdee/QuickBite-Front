@@ -1,11 +1,13 @@
 import { FaApple, FaGooglePlay } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import Banner from "@/assets/Images/bannertwo.png";
+import { Link } from "react-router-dom";
 
 export default function AppMockup() {
   return (
-    <section className="bg-gray-50 py-24"> {/* more vertical space */}
+    <section className="bg-gray-50 py-24"> 
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-        {/* Left: Mockup */}
+       
         <div className="flex justify-center">
           <img
             src={Banner}
@@ -14,7 +16,7 @@ export default function AppMockup() {
           />
         </div>
 
-        {/* Right: Text + CTAs */}
+        
         <div>
           <h2 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
             Order food anytime, anywhere 🍔
@@ -25,8 +27,8 @@ export default function AppMockup() {
           </p>
 
           <div className="flex flex-wrap gap-4">
-            <a
-              href="https://play.google.com"
+            <Link
+              to="https://play.google.com"
               target="_blank"
               className="flex items-center bg-black text-white px-6 py-4 rounded-xl shadow-lg hover:opacity-90 transition"
             >
@@ -35,10 +37,10 @@ export default function AppMockup() {
                 <small className="block text-xs">Get it on</small>
                 <span className="text-base font-semibold">Google Play</span>
               </span>
-            </a>
+            </Link>
 
-            <a
-              href="https://apps.apple.com"
+            <Link
+              to="https://apps.apple.com"
               target="_blank"
               className="flex items-center bg-black text-white px-6 py-4 rounded-xl shadow-lg hover:opacity-90 transition"
             >
@@ -47,7 +49,7 @@ export default function AppMockup() {
                 <small className="block text-xs">Download on</small>
                 <span className="text-base font-semibold">App Store</span>
               </span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

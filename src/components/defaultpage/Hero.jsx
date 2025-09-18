@@ -5,7 +5,7 @@ function Hero() {
   return (
     <section className="bg-white">
       <div className="container mx-auto flex px-5 py-20 items-center justify-between flex-col md:flex-row">
-        {/* Left Text */}
+       
         <div className="flex flex-col items-start text-left mb-10 md:mb-0 md:w-1/2">
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
             Fresh Meals, <span className="text-orange-500">Delivered Fast</span>
@@ -27,7 +27,7 @@ function Hero() {
           </div>
         </div>
 
-        {/* Right Image */}
+        
         <div className="md:w-1/2 w-full">
           <img
             src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092"

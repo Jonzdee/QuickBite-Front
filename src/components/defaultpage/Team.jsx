@@ -1,5 +1,6 @@
 import React from "react";
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Team1 from "@/assets/Images/Team1.jpg"
 import Team2 from "@/assets/Images/Team2.jpg"
@@ -52,21 +53,21 @@ function Team() {
                 className="w-32 h-32 mx-auto rounded-full object-cover mb-4 transform hover:scale-105 transition"
               />
               <h3 className="font-semibold text-lg">{m.name}</h3>
-              {/* Role Badge */}
+              
               <span className="inline-block bg-orange-100 text-orange-600 text-xs font-semibold px-3 py-1 rounded-full mt-2">
                 {m.role}
               </span>
-              {/* Socials */}
+            
               <div className="flex justify-center space-x-4 mt-4 text-gray-500">
-                <a href={m.socials.facebook} target="_blank" rel="noreferrer">
+                <Link to={m.socials.facebook} target="_blank" rel="noreferrer">
                   <FaFacebookF className="cursor-pointer hover:text-orange-600" />
-                </a>
-                <a href={m.socials.twitter} target="_blank" rel="noreferrer">
+                </Link>
+                <Link to={m.socials.twitter} target="_blank" rel="noreferrer">
                   <FaTwitter className="cursor-pointer hover:text-orange-600" />
-                </a>
-                <a href={m.socials.instagram} target="_blank" rel="noreferrer">
+                </Link>
+                <Link to={m.socials.instagram} target="_blank" rel="noreferrer">
                   <FaInstagram className="cursor-pointer hover:text-orange-600" />
-                </a>
+                </Link>
               </div>
             </motion.div>
           ))}
