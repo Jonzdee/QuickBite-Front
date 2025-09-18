@@ -8,7 +8,7 @@ function Footer() {
     <footer className="bg-gray-900 text-gray-300 body-font">
       <div className="container px-5 py-16 mx-auto flex md:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
         
-        {/* Brand */}
+       
         <div className="w-72 flex-shrink-0 mx-auto md:mx-0 text-center md:text-left">
           <Link to="/" className="flex items-center justify-center md:justify-start text-white mb-4">
             <img
@@ -30,10 +30,10 @@ function Footer() {
           </div>
         </div>
 
-        {/* Links */}
+        
         <div className="flex-grow flex flex-wrap md:pl-20 mt-10 md:mt-0 text-center md:text-left">
           
-          {/* Popular Cuisines */}
+         
           <div className="lg:w-1/4 md:w-1/2 w-full px-4">
             <h2 className="font-semibold text-white text-sm mb-3">POPULAR CUISINES</h2>
             <ul className="space-y-2 text-sm">
@@ -44,18 +44,17 @@ function Footer() {
             </ul>
           </div>
 
-          {/* Quick Links */}
+          
           <div className="lg:w-1/4 md:w-1/2 w-full px-4">
             <h2 className="font-semibold text-white text-sm mb-3">QUICK LINKS</h2>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/about" className="hover:text-orange-400">About Us</Link></li>
+              <li><Link to="/home" className="hover:text-orange-400">Home</Link></li>
               <li><Link to="/contact" className="hover:text-orange-400">Contact</Link></li>
               <li><Link to="/faqs" className="hover:text-orange-400">FAQs</Link></li>
               <li><Link to="/careers" className="hover:text-orange-400">Careers</Link></li>
             </ul>
           </div>
 
-          {/* Customer Support */}
           <div className="lg:w-1/4 md:w-1/2 w-full px-4">
             <h2 className="font-semibold text-white text-sm mb-3">CUSTOMER SUPPORT</h2>
             <ul className="space-y-2 text-sm">
@@ -68,7 +67,7 @@ function Footer() {
             </ul>
           </div>
 
-          {/* Download App (external links still use <a>) */}
+          
           <div className="lg:w-1/4 md:w-1/2 w-full px-4">
             <h2 className="font-semibold text-white text-sm mb-3">DOWNLOAD OUR APP</h2>
             <div className="flex flex-col space-y-3 items-center md:items-start">
@@ -91,7 +90,7 @@ function Footer() {
         </div>
       </div>
 
-      {/* Bottom Bar */}
+      
       <div className="bg-gray-800 py-4 mt-10">
         <p className="text-center text-sm text-gray-400">
           © {new Date().getFullYear()} QuickBite — Fresh Meals, Faster Delivery

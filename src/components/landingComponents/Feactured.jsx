@@ -75,7 +75,7 @@ const items = [
         {items.map((item) => (
           <SwiperSlide key={item.id}>
             <div className="bg-white rounded-xl shadow-md overflow-hidden">
-              {/* Image Section */}
+              
               <div className="relative h-40">
                 <img
                   src={item.img}
