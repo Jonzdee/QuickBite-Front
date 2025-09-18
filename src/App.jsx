@@ -6,6 +6,7 @@ import Home from "./pages/Customer/Home";
 import Login from "./components/login/Login"
 import SignUp from "./components/login/SignUp";
 import Landing from "./pages/Landing/Landing";
+import Default from "./pages/DefaultPage/Default";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/landingpage" element={<Landing />} />
+        <Route path="/home" element={<Default />} />
         
       </Routes>
     </BrowserRouter>

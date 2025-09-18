@@ -7,7 +7,7 @@ import HandPick from "@/components/landingComponents/HandPick"
 import Discounts from "@/components/landingComponents/Discounts"
 import Product from "@/components/landingComponents/Product"
 import BannerAuto from '@/components/landingComponents/BannerAuto'
-
+import Footer from "@/components/landingComponents/Footer"
 function Landing() {
   return (
     <div>
@@ -20,6 +20,7 @@ function Landing() {
 <Discounts />
 <BannerAuto />
 <Product />
+<Footer />
     </div>
   )
 }
