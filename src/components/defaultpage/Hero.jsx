@@ -18,12 +18,7 @@ function Hero() {
             <button className="bg-orange-500 hover:bg-orange-600 text-white py-3 px-6 rounded-lg text-lg shadow-md">
               Order Now
             </button>
-            <button className="flex items-center border px-5 py-3 rounded-lg hover:bg-gray-100">
-              <FaApple className="mr-2 text-2xl" /> App Store
-            </button>
-            <button className="flex items-center border px-5 py-3 rounded-lg hover:bg-gray-100">
-              <FaGooglePlay className="mr-2 text-2xl" /> Google Play
-            </button>
+           
           </div>
         </div>
 
