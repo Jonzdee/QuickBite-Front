@@ -21,7 +21,7 @@ function BannerAuto() {
         }}
         loop={true}
         pagination={{ clickable: true }}
-        className="w-full max-w-[1200px] rounded-lg shadow-md"
+        className="w-full max-w-6xl mx-auto rounded-lg shadow-md"
       >
         {banners.map((banner, i) => (
           <SwiperSlide key={i}>

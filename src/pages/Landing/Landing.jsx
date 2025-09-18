@@ -8,19 +8,25 @@ import Discounts from "@/components/landingComponents/Discounts"
 import Product from "@/components/landingComponents/Product"
 import BannerAuto from '@/components/landingComponents/BannerAuto'
 import Footer from "@/components/landingComponents/Footer"
+
 function Landing() {
   return (
-    <div>
-<Navbar />
-<Banner />
-<Card />
-<Explore />
-<Feactured />
-<HandPick />
-<Discounts />
-<BannerAuto />
-<Product />
-<Footer />
+    <div className="w-full">
+    
+      <Navbar />
+      
+      <div className="w-full max-w-6xl mx-auto px-4 space-y-16">
+        <Banner />
+        <Card />
+        <Explore />
+        <Feactured />
+        <HandPick />
+        <Discounts />
+        <BannerAuto />
+        <Product />
+      </div>
+
+      <Footer />
     </div>
   )
 }

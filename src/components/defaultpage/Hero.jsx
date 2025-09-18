@@ -67,7 +67,7 @@ function Hero() {
           <motion.img
             src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092"
             alt="food delivery"
-            className="rounded-2xl shadow-lg"
+            className="rounded-2xl shadow-lg "
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           />
