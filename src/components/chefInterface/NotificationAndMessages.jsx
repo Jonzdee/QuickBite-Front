@@ -1,10 +1,9 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const notifications = [
   {
-    id: 1,
-    name: "Tanbir Ahmed",
-    action: "Placed a new order",
+    id: 1, name: "Tanbir Ahmed", action: "Placed a new order",
     time: "20 min ago",
     avatar: "https://randomuser.me/api/portraits/men/13.jpg",
     icon: "https://randomuser.me/api/portraits/men/13.jpg",
@@ -61,7 +60,6 @@ const messages = [
     message: "Thanks dude.",
     time: "19:37",
     unreadCount: 1,
-    
     online: true,
   },
   {
@@ -80,6 +78,12 @@ export default function NotificationAndMessages() {
 
   return (
     <div className="bg-white min-h-screen w-full max-w-6xl mx-auto p-4 sm:p-6 lg:p-8">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9, y: 30 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+
       {/* Header */}
       <div className="flex items-center gap-3 mb-6">
         <h1 className="text-xl font-semibold text-gray-800 capitalize">
@@ -178,6 +182,7 @@ export default function NotificationAndMessages() {
             </div>
           ))}
       </div>
+      </motion.div>
     </div>
   );
 }

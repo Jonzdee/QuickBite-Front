@@ -1,10 +1,16 @@
 import React from 'react';
 import { FaCaretRight } from "react-icons/fa";
+import { motion } from 'framer-motion';
 
 
 const ProfileDashboard = () => {
   return (
     <div className="min-h-screen flex justify-center items-center p-6">
+         <motion.div
+        initial={{ opacity: 0, scale: 0.9, y: 30 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        >
       <div className="w-full max-w-5xl bg-white rounded-xl shadow-lg flex flex-col lg:flex-row overflow-hidden">
         
         {/* Profile + Balance */}
@@ -30,13 +36,14 @@ const ProfileDashboard = () => {
           <MenuItem icon="↩" label="Log Out" />
         </div>
       </div>
+      </motion.div>
     </div>
   );
 };
 
 const MenuItem = ({ icon, label, value }) => {
   return (
-    <div className="flex items-center justify-between max-w-6xl p-4 bg-gray-100 rounded-lg hover:bg-gray-200 cursor-pointer transition">
+    <div className="flex items-center justify-between max-w-6xl p-4 bg-gray-100 rounded-lg hover:bg-gray-200">
       <div className="flex items-center space-x-3">
         <span className="text-2xl">{icon}</span>
         <span className="text-lg font-medium">{label}</span>
@@ -44,7 +51,7 @@ const MenuItem = ({ icon, label, value }) => {
       {value ? (
         <span className="text-base font-semibold text-gray-700">{value}</span>
       ) : (
-        <span className="text-gray-400 text-2xl"><FaCaretRight  /></span>
+        <button className="text-gray-400 text-2xl cursor-pointer transition"><FaCaretRight  /></button>
       )}
     </div>
   );

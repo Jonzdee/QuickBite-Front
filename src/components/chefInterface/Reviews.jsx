@@ -1,5 +1,6 @@
 import React from "react";
 import { FaStar, FaRegStar } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 
 const ReviewCard = ({ date, title, rating, description, avatarUrl }) => {
@@ -85,6 +86,11 @@ const Reviews = () => {
 
   return (
     <div className="bg-white min-h-screen w-full max-w-6xl mx-auto p-6 sm:p-8 lg:p-10">
+               <motion.div
+        initial={{ opacity: 0, scale: 0.9, y: 30 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        >
       {/* Header */}
       <div className="flex items-center gap-3 mb-6">
         <h2 className="text-xl font-semibold text-gray-800">Reviews</h2>
@@ -96,6 +102,7 @@ const Reviews = () => {
           <ReviewCard key={index} {...review} />
         ))}
       </div>
+      </motion.div>
     </div>
   );
 };

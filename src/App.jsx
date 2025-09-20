@@ -9,6 +9,7 @@ import ForgoteenPassword from "./components/login/ForgottenPassword";
 import NotificationAndMessages from "./components/chefInterface/NotificationAndMessages";
 import Reviews from "./components/chefInterface/Reviews";
 import ProfileDashboard from "./components/chefInterface/ProfileDashboard";
+import WithdrawSuccess from "./components/chefInterface/WithdrawSucess";
 
 
 
@@ -37,6 +38,7 @@ function App() {
         <Route path="/notification" element={<NotificationAndMessages />} />
         <Route path="/review" element={<Reviews />} />
         <Route path="/dashboard" element={<ProfileDashboard />} />
+        <Route path="/withdraw-success" element={<WithdrawSuccess />} />
 
         
         
