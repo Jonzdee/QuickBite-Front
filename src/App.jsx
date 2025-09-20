@@ -6,6 +6,10 @@ import Home from "./pages/Customer/Home";
 import Login from "./components/login/Login"
 import SignUp from "./components/login/SignUp";
 import AllowLocation from "./components/login/AllowLocation";
+import Dashboard from "./vendor/pages/Dashboard";
+import ChefLayout from "./vendor/layout/ChefLayout";
+import AddNewItem from "./vendor/pages/AddNewItem";
+import MyFoodList from "./vendor/pages/MyFoodList";
 
 function App() {
   return (
@@ -28,6 +32,18 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/getlocation" element={<AllowLocation />} />
+
+        {/* Chef routes */}
+        <Route element={<ChefLayout />}>
+          <Route path="/chef/dashboard" element={<Dashboard />} />
+          <Route path="/chef/foods" element={<MyFoodList />} />
+          <Route path="/chef/add-food" element={<AddNewItem />} />
+          {/*<Route path="/chef/orders" element={<Orders />} />
+          <Route path="/chef/notifications" element={<Notifications />} />
+          <Route path="/chef/messages" element={<Messages />} />
+          <Route path="/chef/profile" element={<Profile />} />*/}
+        </Route>
+
       </Routes>
     </BrowserRouter>
   );
