@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { introPages } from "@/components/IntroPage/introPages"; 
 
+
 function IntroSlider() {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(1); 
