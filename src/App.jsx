@@ -1,11 +1,17 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { introPages } from "./components/IntroPage/introPages";
-import Intro from "./components/IntroPage/Intro";
-import IntroSplash from "./components/IntroPage/IntroSplash";
-import Home from "./pages/Customer/Home";
-import Login from "./components/login/Login"
-import SignUp from "./components/login/SignUp";
-import ForgoteenPassword from "./components/ForgottenPassword";
+import { introPages } from "../src/components/IntroPage/introPages";
+import Intro from "../src/components/IntroPage/Intro";
+import IntroSplash from "../src/components/IntroPage/IntroSplash";
+import Home from "../src/pages/Customer/Home";
+import Login from "../src/components/login/Login"
+import SignUp from "../src/components/login/SignUp";
+import ForgoteenPassword from "./components/login/ForgottenPassword";
+import NotificationAndMessages from "./components/chefInterface/NotificationAndMessages";
+import Reviews from "./components/chefInterface/Reviews";
+import ProfileDashboard from "./components/chefInterface/ProfileDashboard";
+
+
+
 
 function App() {
   return (
@@ -28,8 +34,18 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/forget-password" element={<ForgoteenPassword />} />
+        <Route path="/notification" element={<NotificationAndMessages />} />
+        <Route path="/review" element={<Reviews />} />
+        <Route path="/dashboard" element={<ProfileDashboard />} />
+
+        
+        
+        
+        
       </Routes>
+
     </BrowserRouter>
+    
   );
 }
 
