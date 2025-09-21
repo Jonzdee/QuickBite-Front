@@ -49,10 +49,10 @@ function App() {
           <Route path="/chef/dashboard" element={<Dashboard />} />
           <Route path="/chef/foods" element={<MyFoodList />} />
           <Route path="/chef/add-food" element={<AddNewItem />} />
-          {/*<Route path="/chef/orders" element={<Orders />} />
+          <Route path="/chef/orders" element={<Orders />} />
           <Route path="/chef/notifications" element={<Notifications />} />
           <Route path="/chef/messages" element={<Messages />} />
-          <Route path="/chef/profile" element={<Profile />} />*/}
+          <Route path="/chef/profile" element={<Profile />} />
         </Route>
 
       
