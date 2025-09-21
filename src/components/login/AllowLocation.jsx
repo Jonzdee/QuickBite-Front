@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+
 import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
+
+import { Link } from "react-router-dom";
+
 
 function AllowLocation() {
   const [address, setAddress] = useState("Your location");
@@ -134,19 +138,26 @@ function AllowLocation() {
                   {loading ? "Locating..." : "Access Location"}
               </Button>
 
-              <Button
-                disabled={!locationRetrieved}
-                className={`w-full py-3 rounded-xl font-semibold ${
-                  locationRetrieved
-                    ? "bg-green-500 hover:bg-green-600 text-white"
-                    : "bg-gray-300 text-gray-600 cursor-not-allowed"
-                }`}
-              >
-                Next
-              </Button>
-            </div>
-          </div>
-        </div>
+
+ 
+
+                <Link to="/landingpage">
+                <Button
+                  disabled={!locationRetrieved}
+                  className={cn(
+                    "w-full",
+                    locationRetrieved
+                      ? "bg-green-500 hover:bg-green-600 text-white"
+                      : "bg-gray-300 text-gray-600 cursor-not-allowed"
+                  )}
+                >
+                  Next
+                </Button></Link>
+              </div>
+            </motion.div>
+          </CardContent>
+        </Card>
+
       </motion.div>
 
       {/* Desktop View */}
