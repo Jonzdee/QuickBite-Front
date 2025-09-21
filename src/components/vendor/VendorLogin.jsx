@@ -59,6 +59,7 @@ function VendorLogin() {
           </div>
 
          
+        <Link to="/chef/dashboard">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -67,6 +68,7 @@ function VendorLogin() {
           >
             Login
           </motion.button>
+        </Link>
 
           
           <div className="flex justify-between items-center text-sm mt-4">

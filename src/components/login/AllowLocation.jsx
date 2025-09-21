@@ -3,9 +3,7 @@ import { motion } from "framer-motion";
 
 import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
-
 import { Link } from "react-router-dom";
-
 
 function AllowLocation() {
   const [address, setAddress] = useState("Your location");
@@ -74,74 +72,71 @@ function AllowLocation() {
       >
         <div className="grid p-0">
           <div className="p-6 flex flex-col gap-6">
-              {/* Floating placeholder */}
-              <motion.div
-                className="absolute top-6 inset-x-0 flex justify-center z-10"
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-              >
-                <div className="bg-white px-4 py-2 rounded-full flex items-center gap-2">
-                  {/* Location Icon */}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className={`w-5 h-5 ${
-                      loading ? "animate-spin text-gray-400" : "text-blue-500"
-                    }`}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M12 11.25c1.242 0 2.25-1.008 2.25-2.25S13.242 6.75 12 6.75 9.75 7.758 9.75 9s1.008 2.25 2.25 2.25z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M12 21c4.97-5.25 7.5-9 7.5-12a7.5 7.5 0 10-15 0c0 3 2.53 6.75 7.5 12z"
-                    />
-                  </svg>
-                  <span className="text-gray-600 text-sm">{address}</span>
-                </div>
-              </motion.div>
-
-              {/* Illustration */}
-              <div className="flex-1 flex items-center justify-center pt-20">
-                <img
-                  src="https://images.template.net/80453/Free-Food-Delivery-Illustration--JPG--1.jpg"
-                  alt="Map Illustration"
-                  className="max-w-md h-64 object-contain opacity-90 rounded-xl "
-                />
-              </div>
-
-              {/* Text */}
-              <div className="text-center mt-4">
-                <h2 className="text-xl font-bold">Allow your location</h2>
-                <p className="text-muted-foreground text-sm mt-2 max-w-xs mx-auto">
-                  We’ll use your location to show nearby restaurants and deliver faster.
-                </p>
-              </div>
-
-              {/* Buttons */}
-              <div className=" grid grid-cols-1 gap-5 mt-4  sm:grid-cols-2 w-full">
-                <Button
-                  onClick={getLocation}
-                  disabled={loading}
-                  className={cn(
-                    "w-full bg-orange-500 hover:bg-amber-700",
-                    loading && "bg-orange-300 cursor-not-allowed"
-                  )}
+            {/* Floating placeholder */}
+            <motion.div
+              className="absolute top-6 inset-x-0 flex justify-center z-10"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+            >
+              <div className="bg-white px-4 py-2 rounded-full flex items-center gap-2">
+                {/* Location Icon */}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className={`w-5 h-5 ${
+                    loading ? "animate-spin text-gray-400" : "text-blue-500"
+                  }`}
                 >
-                  {loading ? "Locating..." : "Access Location"}
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 11.25c1.242 0 2.25-1.008 2.25-2.25S13.242 6.75 12 6.75 9.75 7.758 9.75 9s1.008 2.25 2.25 2.25z"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 21c4.97-5.25 7.5-9 7.5-12a7.5 7.5 0 10-15 0c0 3 2.53 6.75 7.5 12z"
+                  />
+                </svg>
+                <span className="text-gray-600 text-sm">{address}</span>
+              </div>
+            </motion.div>
+
+            {/* Illustration */}
+            <div className="flex-1 flex items-center justify-center pt-20">
+              <img
+                src="https://images.template.net/80453/Free-Food-Delivery-Illustration--JPG--1.jpg"
+                alt="Map Illustration"
+                className="max-w-md h-64 object-contain opacity-90 rounded-xl "
+              />
+            </div>
+
+            {/* Text */}
+            <div className="text-center mt-4">
+              <h2 className="text-xl font-bold">Allow your location</h2>
+              <p className="text-muted-foreground text-sm mt-2 max-w-xs mx-auto">
+                We’ll use your location to show nearby restaurants and deliver faster.
+              </p>
+            </div>
+
+            {/* Buttons */}
+            <div className="grid grid-cols-1 gap-5 mt-4 sm:grid-cols-2 w-full">
+              <Button
+                onClick={getLocation}
+                disabled={loading}
+                className={cn(
+                  "w-full bg-orange-500 hover:bg-amber-700",
+                  loading && "bg-orange-300 cursor-not-allowed"
+                )}
+              >
+                {loading ? "Locating..." : "Access Location"}
               </Button>
 
-
- 
-
-                <Link to="/landingpage">
+              <Link to="/landingpage">
                 <Button
                   disabled={!locationRetrieved}
                   className={cn(
@@ -152,16 +147,15 @@ function AllowLocation() {
                   )}
                 >
                   Next
-                </Button></Link>
-              </div>
-            </motion.div>
-          </CardContent>
-        </Card>
-
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
       </motion.div>
 
       {/* Desktop View */}
-    <div className="hidden lg:flex w-full max-w-6xl items-center justify-between px-12 relative">
+      <div className="hidden lg:flex w-full max-w-6xl items-center justify-between px-12 relative">
         {/* Left Content */}
         <div className="max-w-lg space-y-6">
           {/* Location badge */}
@@ -223,16 +217,18 @@ function AllowLocation() {
               </span>
             </button>
 
-            <button
-              disabled={!locationRetrieved}
-              className={`px-6 py-3 rounded-xl font-semibold ${
-                locationRetrieved
-                  ? "bg-green-500 hover:bg-green-600 text-white"
-                  : "bg-gray-300 text-gray-600 cursor-not-allowed"
-              }`}
-            >
-              Next
-            </button>
+            <Link to="/landingpage">
+              <button
+                disabled={!locationRetrieved}
+                className={`px-6 py-3 rounded-xl font-semibold ${
+                  locationRetrieved
+                    ? "bg-green-500 hover:bg-green-600 text-white"
+                    : "bg-gray-300 text-gray-600 cursor-not-allowed"
+                }`}
+              >
+                Next
+              </button>
+            </Link>
           </div>
 
           {/* Categories */}

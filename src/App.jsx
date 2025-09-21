@@ -55,7 +55,7 @@ function App() {
           <Route path="/chef/profile" element={<Profile />} />*/}
         </Route>
 
-      </Routes>
+      
 
 
           <Route path="/" element={<Home />} />
