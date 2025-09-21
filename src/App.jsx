@@ -14,6 +14,10 @@ import VendorForgotPassword from "./components/vendor/VendorForgotPassword";
 import VendorSignup from "./components/vendor/VendorSignup";
 import ScrollToTop from "./components/ScrollToTop";
 import AllowLocation from "./components/login/AllowLocation";
+import Dashboard from "./vendor/pages/Dashboard";
+import ChefLayout from "./vendor/layout/ChefLayout";
+import AddNewItem from "./vendor/pages/AddNewItem";
+import MyFoodList from "./vendor/pages/MyFoodList";
 
 
 function App() {
@@ -33,6 +37,27 @@ function App() {
             />
           ))}
 
+
+        {/* Main app */}
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/getlocation" element={<AllowLocation />} />
+
+        {/* Chef routes */}
+        <Route element={<ChefLayout />}>
+          <Route path="/chef/dashboard" element={<Dashboard />} />
+          <Route path="/chef/foods" element={<MyFoodList />} />
+          <Route path="/chef/add-food" element={<AddNewItem />} />
+          {/*<Route path="/chef/orders" element={<Orders />} />
+          <Route path="/chef/notifications" element={<Notifications />} />
+          <Route path="/chef/messages" element={<Messages />} />
+          <Route path="/chef/profile" element={<Profile />} />*/}
+        </Route>
+
+      </Routes>
+
+
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
@@ -47,6 +72,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </>
+
   );
 }
 
