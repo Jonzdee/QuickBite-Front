@@ -1,25 +1,24 @@
+import React from 'react'
+import Navbar from "../../components/landingComponents/Navbar"
 import Banner from '@/components/landingComponents/Banner'
-import Navbar from '@/components/landingComponents/Navbar'
-import Card from '@/components/landingComponents/Cards'
+import Cards from '@/components/landingComponents/Cards'
 import Explore from "@/components/landingComponents/Explore"
-import Feactured from '@/components/landingComponents/Feactured'
-import HandPick from "@/components/landingComponents/HandPick"
-import Discounts from "@/components/landingComponents/Discounts"
-import Product from "@/components/landingComponents/Product"
+import Featured from '@/components/landingComponents/Feactured'
+import HandPick from '@/components/landingComponents/HandPick'
+import Discounts from '@/components/landingComponents/Discounts'
 import BannerAuto from '@/components/landingComponents/BannerAuto'
-import Footer from "@/components/landingComponents/Footer"
-
+import Product from "@/components/landingComponents/Product"
+import Footer from '@/components/landingComponents/Footer'
 function Landing() {
   return (
-    <div className="w-full">
-    
+    <div className="min-h-screen bg-gray-50">
       <Navbar />
-      
-      <div className="w-full max-w-6xl mx-auto px-4 space-y-16">
+
+      <div className="container mx-auto px-4 space-y-12">
         <Banner />
-        <Card />
+        <Cards />
         <Explore />
-        <Feactured />
+        <Featured />
         <HandPick />
         <Discounts />
         <BannerAuto />
@@ -30,5 +29,6 @@ function Landing() {
     </div>
   )
 }
+
 
 export default Landing

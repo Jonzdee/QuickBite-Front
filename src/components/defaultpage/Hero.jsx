@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaTruck, FaLeaf, FaShieldAlt, FaStar } from "react-icons/fa";
+
 
 function Hero() {
   return (
@@ -27,7 +27,7 @@ function Hero() {
               whileHover={{ scale: 1.05 }}
               className="flex items-center space-x-3"
             >
-              <FaTruck className="text-orange-500 text-2xl" />
+            
               <span className="text-gray-700 font-medium">Fast Delivery</span>
             </motion.div>
 
@@ -35,7 +35,7 @@ function Hero() {
               whileHover={{ scale: 1.05 }}
               className="flex items-center space-x-3"
             >
-              <FaLeaf className="text-green-500 text-2xl" />
+              
               <span className="text-gray-700 font-medium">Fresh Ingredients</span>
             </motion.div>
 
@@ -43,7 +43,7 @@ function Hero() {
               whileHover={{ scale: 1.05 }}
               className="flex items-center space-x-3"
             >
-              <FaShieldAlt className="text-blue-500 text-2xl" />
+             
               <span className="text-gray-700 font-medium">Secure Payment</span>
             </motion.div>
 
@@ -51,7 +51,7 @@ function Hero() {
               whileHover={{ scale: 1.05 }}
               className="flex items-center space-x-3"
             >
-              <FaStar className="text-yellow-400 text-2xl" />
+             
               <span className="text-gray-700 font-medium">4.9/5 Rating</span>
             </motion.div>
           </div>

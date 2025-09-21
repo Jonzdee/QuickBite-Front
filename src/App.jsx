@@ -14,7 +14,7 @@ import VendorForgotPassword from "./components/vendor/VendorForgotPassword";
 import VendorSignup from "./components/vendor/VendorSignup";
 import ScrollToTop from "./components/ScrollToTop";
 import AllowLocation from "./components/login/AllowLocation";
-import Landing from "./pages/landing/Landing";
+
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
       <BrowserRouter>
         <ScrollToTop />
         <Routes>
-          <Landing />
+          
           <Route path="/intro" element={<IntroSplash />} />
 
           {introPages.map((page) => (

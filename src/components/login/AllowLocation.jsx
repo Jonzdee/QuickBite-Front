@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 function AllowLocation({ className, ...props }) {
   const [address, setAddress] = useState("Your location");
@@ -136,6 +137,7 @@ function AllowLocation({ className, ...props }) {
                   {loading ? "Locating..." : "Access Location"}
                 </Button>
 
+                <Link to="/landingpage">
                 <Button
                   disabled={!locationRetrieved}
                   className={cn(
@@ -146,7 +148,7 @@ function AllowLocation({ className, ...props }) {
                   )}
                 >
                   Next
-                </Button>
+                </Button></Link>
               </div>
             </motion.div>
           </CardContent>
