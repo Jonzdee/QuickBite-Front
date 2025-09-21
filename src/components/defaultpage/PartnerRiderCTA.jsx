@@ -18,7 +18,7 @@ export default function PartnerRiderCTA() {
             <motion.img
               src={IvoryBites}
               alt="Restaurant Partner"
-              className="rounded-2xl shadow-lg"
+              className="w-full h-80 object-cover rounded-2xl shadow-lg"
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             />
@@ -57,7 +57,7 @@ export default function PartnerRiderCTA() {
             <motion.img
               src={Rider}
               alt="QuickBite Rider"
-              className="rounded-2xl shadow-lg"
+              className="w-full h-80 object-cover rounded-2xl shadow-lg"
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             />
