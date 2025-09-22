@@ -138,13 +138,8 @@ function AllowLocation() {
 
               <Link to="/landingpage">
                 <Button
-                  disabled={!locationRetrieved}
-                  className={cn(
-                    "w-full",
-                    locationRetrieved
-                      ? "bg-green-500 hover:bg-green-600 text-white"
-                      : "bg-gray-300 text-gray-600 cursor-not-allowed"
-                  )}
+                  
+                  className="w-full"
                 >
                   Next
                 </Button>
@@ -219,12 +214,7 @@ function AllowLocation() {
 
             <Link to="/landingpage">
               <button
-                disabled={!locationRetrieved}
-                className={`px-6 py-3 rounded-xl font-semibold ${
-                  locationRetrieved
-                    ? "bg-green-500 hover:bg-green-600 text-white"
-                    : "bg-gray-300 text-gray-600 cursor-not-allowed"
-                }`}
+                className="px-6 py-3 rounded-xl font-semibold bg-gray-500 text-white"
               >
                 Next
               </button>
