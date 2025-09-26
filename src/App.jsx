@@ -6,10 +6,11 @@ import Home from "../src/pages/Customer/Home";
 import Login from "../src/components/login/Login"
 import SignUp from "../src/components/login/SignUp";
 import ForgoteenPassword from "./components/login/ForgottenPassword";
-import NotificationAndMessages from "./components/chefInterface/NotificationAndMessages";
 import Reviews from "./components/chefInterface/Reviews";
 import ProfileDashboard from "./components/chefInterface/ProfileDashboard";
 import WithdrawSuccess from "./components/chefInterface/WithdrawSucess";
+import Notifications from "./components/chefInterface/Notifications";
+import Messages from "./components/chefInterface/Messages";
 
 
 
@@ -35,7 +36,9 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/forget-password" element={<ForgoteenPassword />} />
-        <Route path="/notification" element={<NotificationAndMessages />} />
+       
+        <Route path="/notifications" element={<Notifications />} />
+        <Route path="/messages" element={<Messages />} />
         <Route path="/review" element={<Reviews />} />
         <Route path="/dashboard" element={<ProfileDashboard />} />
         <Route path="/withdraw-success" element={<WithdrawSuccess />} />
