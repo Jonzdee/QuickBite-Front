@@ -9,6 +9,7 @@ import Landing from "./pages/Landing/Landing";
 import Default from "./pages/DefaultPage/Default";
 import Page from "./pages/Vendor/Page";
 import RiderPage from "./pages/Rider/RiderPage";
+import CheckoutPage from "./pages/Customer/CheckoutPage";
 import VendorLogin from "./components/vendor/VendorLogin";
 import VendorForgotPassword from "./components/vendor/VendorForgotPassword";
 import VendorSignup from "./components/vendor/VendorSignup";
@@ -18,7 +19,7 @@ import Dashboard from "./vendor/pages/Dashboard";
 import ChefLayout from "./vendor/layout/ChefLayout";
 import AddNewItem from "./vendor/pages/AddNewItem";
 import MyFoodList from "./vendor/pages/MyFoodList";
-
+import ProductDetails from "./components/landingComponents/ProductDetails";
 
 function App() {
   return (
@@ -26,7 +27,6 @@ function App() {
       <BrowserRouter>
         <ScrollToTop />
         <Routes>
-          
           <Route path="/intro" element={<IntroSplash />} />
 
           {introPages.map((page) => (
@@ -37,26 +37,26 @@ function App() {
             />
           ))}
 
+          {/* Main app */}
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/getlocation" element={<AllowLocation />} />
+          <Route path="/product-details/:id" element={<ProductDetails />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
+         
+         
+          {/* Chef routes */}
+          <Route element={<ChefLayout />}>
+            <Route path="/chef/dashboard" element={<Dashboard />} />
+            <Route path="/chef/foods" element={<MyFoodList />} />
+            <Route path="/chef/add-food" element={<AddNewItem />} />
 
-        {/* Main app */}
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/getlocation" element={<AllowLocation />} />
-
-        {/* Chef routes */}
-        <Route element={<ChefLayout />}>
-          <Route path="/chef/dashboard" element={<Dashboard />} />
-          <Route path="/chef/foods" element={<MyFoodList />} />
-          <Route path="/chef/add-food" element={<AddNewItem />} />
-          {/*<Route path="/chef/orders" element={<Orders />} />
+            {/*<Route path="/chef/orders" element={<Orders />} />
           <Route path="/chef/notifications" element={<Notifications />} />
           <Route path="/chef/messages" element={<Messages />} />
           <Route path="/chef/profile" element={<Profile />} />*/}
-        </Route>
-
-      
-
+          </Route>
 
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
@@ -72,7 +72,6 @@ function App() {
         </Routes>
       </BrowserRouter>
     </>
-
   );
 }
 

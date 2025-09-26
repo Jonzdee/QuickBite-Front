@@ -221,7 +221,7 @@ function AllowLocation() {
             </Link>
           </div>
 
-          {/* Categories */}
+          
           <div className="flex gap-6 pt-6">
             <div className="bg-white rounded-xl p-4 flex flex-col items-center w-28">
               <img

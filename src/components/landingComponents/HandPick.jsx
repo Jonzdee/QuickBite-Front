@@ -1,64 +1,28 @@
-
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
-import { Link } from "react-router-dom";
 import "swiper/css/navigation";
+import { Link } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
-import JustFood from "@/assets/vendorslogo/Just Food.png"
-import Kitchen from "@/assets/vendorslogo/kitchentago.png"
-import Alade from "@/assets/vendorslogo/alade.png"
-import HeartButton from "@/components/landingComponents/HeartButton"
+import HeartButton from "@/components/landingComponents/HeartButton";
+import { restaurants } from "@/utils/data"; 
 
-const items = [
-  {
-    id: 1,
-    name: "Chicken Republic – Ikorodu",
-    img: Kitchen,
-    deliveryFee: "Free",
-    eta: "44 - 54 min",
-    rating: 4.2,
-    reviews: 6635,
-  },
-  {
-    id: 2,
-    name: "Papa's Grill",
-    img: Alade,
-    deliveryFee: "From ₦1,000",
-    eta: "30 - 45 min",
-    rating: 4.5,
-    reviews: 2140,
-  },
-  {
-    id: 3,
-    name: "Papa's Grill",
-    img: JustFood,
-    deliveryFee: "From ₦1,000",
-    eta: "30 - 45 min",
-    rating: 4.5,
-    reviews: 2140,
-  },
-  {
-    id: 4,
-    name: "Papa's Grill",
-    img: JustFood,
-    deliveryFee: "From ₦1,000",
-    eta: "30 - 45 min",
-    rating: 4.5,
-    reviews: 2140,
-  },
-];
-
- function HandPick() {
-   return (
+function HandPick() {
+  return (
     <div className="container mx-auto px-4 py-6">
+      {/* Header */}
       <div className="flex items-center justify-between py-5">
-              <h2 className="text-lg font-semibold">Open Restaurants 💚</h2>
-              <Link className="text-green-950 bg-gray-100 rounded-lg px-4 py-2">
-                View All
-              </Link>
-            </div>
+        <h2 className="text-lg font-semibold">Open Restaurants 💚</h2>
+        <Link
+          to="/restaurants"
+          className="text-green-950 bg-gray-100 rounded-lg px-4 py-2 hover:bg-gray-200"
+        >
+          View All
+        </Link>
+      </div>
+
+      {/* Carousel */}
       <Swiper
         modules={[Navigation]}
         spaceBetween={16}
@@ -68,24 +32,27 @@ const items = [
           1024: { slidesPerView: 3.2 },
         }}
       >
-        {items.map((item) => (
+        {restaurants.map((item) => (
           <SwiperSlide key={item.id}>
-            <div className="bg-white rounded-xl shadow-md overflow-hidden">
-             
+            <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+              {/* Restaurant Image */}
               <div className="relative h-40">
-                <img
-                  src={item.img}
-                  alt={item.name}
-                  className="w-full h-full object-cover"
-                />
-               
+                <Link to={`/product-details/${item.id}`}>
+                  <img
+                    src={item.img}
+                    alt={item.name}
+                    className="w-full h-full object-cover"
+                  />
+                </Link>
               </div>
 
-             
+              {/* Details */}
               <div className="p-3">
                 <div className="flex items-start justify-between">
-                  <h3 className="font-semibold text-sm">{item.name}</h3>
-                  <HeartButton /> 
+                  <h3 className="font-semibold text-sm line-clamp-1">
+                    {item.name}
+                  </h3>
+                  <HeartButton />
                 </div>
 
                 <p className="text-xs text-gray-500 mt-1">
@@ -105,4 +72,5 @@ const items = [
     </div>
   );
 }
-export default HandPick
+
+export default HandPick;
