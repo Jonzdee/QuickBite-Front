@@ -31,7 +31,7 @@ function Login({ className, ...props }) {
               transition={{ delay: 0.2, duration: 0.6 }}
             >
               <div className="flex flex-col gap-5">
-                {/* Header */}
+                
                 <motion.div
                   className="flex flex-col items-center text-center"
                   initial={{ opacity: 0, y: -20 }}
@@ -50,7 +50,6 @@ function Login({ className, ...props }) {
                   </p>
                 </motion.div>
 
-                {/* Email */}
                 <motion.div
                   className="grid gap-2"
                   initial={{ opacity: 0, x: -20 }}
@@ -61,12 +60,12 @@ function Login({ className, ...props }) {
                   <Input
                     id="email"
                     type="email"
-                    placeholder="you@example.com"
+                    placeholder="your email here"
                     required
                   />
                 </motion.div>
 
-                {/* Password */}
+                
                 <motion.div
                   className="grid gap-2"
                   initial={{ opacity: 0, x: -20 }}
@@ -85,7 +84,7 @@ function Login({ className, ...props }) {
                   <Input id="password" type="password" required />
                 </motion.div>
 
-                {/* Login Button */}
+                
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -101,7 +100,6 @@ function Login({ className, ...props }) {
                   </Link>
                 </motion.div>
 
-                {/* Divider */}
                 <motion.div
                   className="relative text-center text-xs after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t"
                   initial={{ opacity: 0 }}
@@ -113,7 +111,7 @@ function Login({ className, ...props }) {
                   </span>
                 </motion.div>
 
-                {/* Social Login */}
+                
                 <motion.div
                   className="grid grid-cols-2 gap-3"
                   initial={{ opacity: 0, y: 20 }}

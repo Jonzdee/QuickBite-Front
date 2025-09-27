@@ -1,4 +1,4 @@
-// src/pages/CheckoutPage.jsx
+
 import React, { useState } from "react";
 import usePaystack from "@/hooks/usePaystack";
 import Swal from "sweetalert2";
@@ -10,20 +10,20 @@ function CheckoutPage() {
     { id: 2, name: "Chicken Suya", price: 3500, qty: 1 },
   ]);
 
-  // 🔹 Form states
+
   const [email, setEmail] = useState("");
   const [fullName, setFullName] = useState("");
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
   const [shipping, setShipping] = useState("standard");
 
-  // 🔹 Calculations
+ 
   const total = cart.reduce((acc, item) => acc + item.price * item.qty, 0);
   const shippingCost = shipping === "standard" ? 1200 : 2500;
   const taxes = Math.round(total * 0.075); // 7.5% VAT
   const grandTotal = total + shippingCost + taxes;
 
-  // 🔹 Paystack public key from .env
+  
   const publicKey = import.meta.env.VITE_PAYSTACK_PUBLIC_KEY;
 
   const payWithPaystack = () => {
@@ -35,7 +35,7 @@ function CheckoutPage() {
     const handler = window.PaystackPop.setup({
       key: publicKey,
       email: email || "guest@email.com",
-      amount: grandTotal * 100, // Paystack requires kobo
+      amount: grandTotal * 100, 
       currency: "NGN",
       ref: "QB-" + Math.floor(Math.random() * 1000000000 + 1),
       metadata: {
@@ -71,7 +71,7 @@ function CheckoutPage() {
     <div className="container mx-auto px-4 py-10 grid md:grid-cols-2 gap-10">
      
       <div>
-        {/* Contact Info */}
+   
         <div className="bg-white p-6 rounded-2xl shadow mb-6">
           <h2 className="text-lg font-semibold mb-4">Contact information</h2>
           <input
@@ -83,7 +83,7 @@ function CheckoutPage() {
           />
         </div>
 
-        {/* Shipping Info */}
+      
         <div className="bg-white p-6 rounded-2xl shadow mb-6">
           <h2 className="text-lg font-semibold mb-4">Shipping information</h2>
           <input
@@ -109,7 +109,7 @@ function CheckoutPage() {
           />
         </div>
 
-        {/* Delivery Method */}
+     
         <div className="bg-white p-6 rounded-2xl shadow mb-6">
           <h2 className="text-lg font-semibold mb-4">Delivery method</h2>
           <div className="flex gap-4">
@@ -136,7 +136,7 @@ function CheckoutPage() {
           </div>
         </div>
 
-        {/* Paystack Button */}
+        
         <div className="bg-white p-6 rounded-2xl shadow">
           <h2 className="text-lg font-semibold mb-4">Payment</h2>
           <button
@@ -149,7 +149,7 @@ function CheckoutPage() {
         </div>
       </div>
 
-      {/* RIGHT - Order Summary */}
+      
       <div className="bg-white p-6 rounded-2xl shadow">
         <h2 className="text-lg font-semibold mb-4">Order summary</h2>
         {cart.length === 0 ? (

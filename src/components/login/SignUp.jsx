@@ -1,16 +1,69 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate, Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import QuickBite from "../../assets/Images/QuickBiteLogo.png";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+
+const API_URL = import.meta.env.VITE_API_URL;
+
 function SignUp({ className, ...props }) {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phoneNumber: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (formData.password !== formData.confirmPassword) {
+      alert("Passwords do not match!");
+      return;
+    }
+
+    try {
+      setLoading(true);
+
+      const payload = {
+        name: formData.name,
+        email: formData.email,
+        phoneNumber: formData.phoneNumber,
+        password: formData.password,
+      };
+
+      const res = await axios.post(`${API_URL}/users/signup`, payload);
+
+      // save token to localstorage
+      if (res.data.token) {
+        localStorage.setItem("token", res.data.token);
+      }
+
+      // Auto redirect to get location no need user login again 
+      navigate("/getlocation");
+    } catch (err) {
+      console.error(err.response?.data || err.message);
+      alert(err.response?.data?.message || "Signup failed");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="flex min-h-screen items-center justify-center p-4">
-      {/* Animated Card */}
+      
       <motion.div
         initial={{ opacity: 0, scale: 0.9, y: 30 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -24,15 +77,16 @@ function SignUp({ className, ...props }) {
           {...props}
         >
           <CardContent className="grid p-0 md:grid-cols-1">
-            {/* Left side: form */}
+            
             <motion.form
               className="p-6 md:p-6"
+              onSubmit={handleSubmit}
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
             >
               <div className="flex flex-col gap-5">
-                {/* Heading */}
+               
                 <motion.div
                   className="flex flex-col items-center text-center"
                   initial={{ opacity: 0, y: -20 }}
@@ -49,7 +103,7 @@ function SignUp({ className, ...props }) {
                   </p>
                 </motion.div>
 
-                {/* Name */}
+              
                 <motion.div
                   className="grid gap-2"
                   initial={{ opacity: 0, x: -20 }}
@@ -57,10 +111,17 @@ function SignUp({ className, ...props }) {
                   transition={{ delay: 0.4 }}
                 >
                   <Label htmlFor="name">Full Name</Label>
-                  <Input id="name" type="text" placeholder="John Doe" required />
+                  <Input
+                    id="name"
+                    type="text"
+                    placeholder="your name here"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                  />
                 </motion.div>
 
-                {/* Email */}
+               
                 <motion.div
                   className="grid gap-2"
                   initial={{ opacity: 0, x: -20 }}
@@ -71,12 +132,32 @@ function SignUp({ className, ...props }) {
                   <Input
                     id="email"
                     type="email"
-                    placeholder="you@example.com"
+                    placeholder="your email here"
+                    value={formData.email}
+                    onChange={handleChange}
                     required
                   />
                 </motion.div>
 
-                {/* Password */}
+                
+                <motion.div
+                  className="grid gap-2"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.55 }}
+                >
+                  <Label htmlFor="phoneNumber">Phone Number</Label>
+                  <Input
+                    id="phoneNumber"
+                    type="text"
+                    placeholder="+234........"
+                    value={formData.phoneNumber}
+                    onChange={handleChange}
+                    required
+                  />
+                </motion.div>
+
+                
                 <motion.div
                   className="grid gap-2"
                   initial={{ opacity: 0, x: -20 }}
@@ -84,10 +165,16 @@ function SignUp({ className, ...props }) {
                   transition={{ delay: 0.6 }}
                 >
                   <Label htmlFor="password">Password</Label>
-                  <Input id="password" type="password" required />
+                  <Input
+                    id="password"
+                    type="password"
+                    value={formData.password}
+                    onChange={handleChange}
+                    required
+                  />
                 </motion.div>
 
-                {/* Confirm Password */}
+                
                 <motion.div
                   className="grid gap-2"
                   initial={{ opacity: 0, x: -20 }}
@@ -95,10 +182,16 @@ function SignUp({ className, ...props }) {
                   transition={{ delay: 0.7 }}
                 >
                   <Label htmlFor="confirmPassword">Confirm Password</Label>
-                  <Input id="confirmPassword" type="password" required />
+                  <Input
+                    id="confirmPassword"
+                    type="password"
+                    value={formData.confirmPassword}
+                    onChange={handleChange}
+                    required
+                  />
                 </motion.div>
 
-                {/* Submit */}
+                
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -107,12 +200,13 @@ function SignUp({ className, ...props }) {
                   <Button
                     type="submit"
                     className="w-full bg-orange-500 hover:bg-amber-700"
+                    disabled={loading}
                   >
-                    Sign Up
+                    {loading ? "Signing up..." : "Sign Up"}
                   </Button>
                 </motion.div>
 
-                {/* Divider */}
+               
                 <motion.div
                   className="relative text-center text-xs after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t"
                   initial={{ opacity: 0 }}
@@ -124,7 +218,7 @@ function SignUp({ className, ...props }) {
                   </span>
                 </motion.div>
 
-                {/* Social signups */}
+               
                 <motion.div
                   className="grid grid-cols-2 gap-3"
                   initial={{ opacity: 0, y: 20 }}
@@ -145,7 +239,7 @@ function SignUp({ className, ...props }) {
                   </Button>
                 </motion.div>
 
-                {/* Login link */}
+               
                 <motion.div
                   className="text-center text-xs"
                   initial={{ opacity: 0 }}

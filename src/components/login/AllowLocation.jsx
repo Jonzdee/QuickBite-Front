@@ -10,7 +10,7 @@ function AllowLocation() {
   const [locationRetrieved, setLocationRetrieved] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  // Load stored location from localStorage on mount
+  
   useEffect(() => {
     const storedAddress = localStorage.getItem("userAddress");
     if (storedAddress) {
@@ -43,7 +43,7 @@ function AllowLocation() {
           setAddress(finalAddress);
           setLocationRetrieved(true);
 
-          // Persist in localStorage
+         
           localStorage.setItem("userAddress", finalAddress);
         } catch (err) {
           console.error("Error fetching address:", err);
@@ -63,7 +63,7 @@ function AllowLocation() {
 
   return (
     <div className="flex min-h-screen items-center justify-center p-4 bg-gray-50 lg:bg-white">
-      {/* Mobile Card */}
+      
       <motion.div
         initial={{ opacity: 0, scale: 0.9, y: 30 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -72,7 +72,7 @@ function AllowLocation() {
       >
         <div className="grid p-0">
           <div className="p-6 flex flex-col gap-6">
-            {/* Floating placeholder */}
+      
             <motion.div
               className="absolute top-6 inset-x-0 flex justify-center z-10"
               initial={{ opacity: 0, y: -10 }}
@@ -106,7 +106,7 @@ function AllowLocation() {
               </div>
             </motion.div>
 
-            {/* Illustration */}
+         
             <div className="flex-1 flex items-center justify-center pt-20">
               <img
                 src="https://images.template.net/80453/Free-Food-Delivery-Illustration--JPG--1.jpg"
@@ -115,7 +115,7 @@ function AllowLocation() {
               />
             </div>
 
-            {/* Text */}
+         
             <div className="text-center mt-4">
               <h2 className="text-xl font-bold">Allow your location</h2>
               <p className="text-muted-foreground text-sm mt-2 max-w-xs mx-auto">
@@ -123,7 +123,7 @@ function AllowLocation() {
               </p>
             </div>
 
-            {/* Buttons */}
+        
             <div className="grid grid-cols-1 gap-5 mt-4 sm:grid-cols-2 w-full">
               <Button
                 onClick={getLocation}
@@ -149,11 +149,11 @@ function AllowLocation() {
         </div>
       </motion.div>
 
-      {/* Desktop View */}
+     
       <div className="hidden lg:flex w-full max-w-6xl items-center justify-between px-12 relative">
-        {/* Left Content */}
+        
         <div className="max-w-lg space-y-6">
-          {/* Location badge */}
+          
           <div className="bg-white shadow-lg px-4 py-2 rounded-full inline-flex items-center gap-2 max-w-full">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -191,7 +191,7 @@ function AllowLocation() {
             medicine, food & groceries and deliver to you faster.
           </p>
 
-          {/* Buttons */}
+      
           <div className="flex gap-4">
             <button
               onClick={getLocation}
@@ -240,7 +240,7 @@ function AllowLocation() {
           </div>
         </div>
 
-        {/* Right Illustration */}
+        
         <div className="relative">
           <div className="bg-white/70 rounded-3xl p-4">
             <img
@@ -259,7 +259,7 @@ function AllowLocation() {
             />
           </div>
 
-          {/* Floating review 1 */}
+          
           <div className="absolute top-6 right-0 bg-white/90 shadow-lg rounded-xl p-3 flex items-center gap-3">
             <img
               src="https://randomuser.me/api/portraits/men/32.jpg"
@@ -273,7 +273,7 @@ function AllowLocation() {
             </div>
           </div>
 
-          {/* Floating review 2 */}
+          
           <div className="absolute bottom-10 -left-16 bg-white/90 shadow-lg rounded-xl p-3 flex items-center gap-3">
             <img
               src="https://randomuser.me/api/portraits/women/44.jpg"
