@@ -93,6 +93,7 @@ export default function NotificationAndMessages() {
 
       {/* Tabs */}
       <div className="flex border-b border-gray-200">
+       
         <button
           onClick={() => setActiveTab("notifications")}
           className={`flex-1 text-center py-3 text-sm font-medium ${

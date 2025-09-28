@@ -10,6 +10,8 @@ import NotificationAndMessages from "./components/chefInterface/NotificationAndM
 import Reviews from "./components/chefInterface/Reviews";
 import ProfileDashboard from "./components/chefInterface/ProfileDashboard";
 import WithdrawSuccess from "./components/chefInterface/WithdrawSucess";
+import ChangePassword from "./components/chefInterface/ChangePassword";
+import OrderPage from "./components/chefInterface/OrderPage";
 
 
 
@@ -39,6 +41,8 @@ function App() {
         <Route path="/review" element={<Reviews />} />
         <Route path="/dashboard" element={<ProfileDashboard />} />
         <Route path="/withdraw-success" element={<WithdrawSuccess />} />
+        <Route path="/change-password" element={<ChangePassword />} />
+        <Route path="/orders" element={<OrderPage />} />
 
         
         
