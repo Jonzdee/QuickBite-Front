@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -6,6 +7,24 @@ import { introPages } from "@/components/IntroPage/introPages";
 
 
 function IntroSlider() {
+    const navigate = useNavigate();
+    
+  useEffect(() => {
+      const showSplashOnce = localStorage.getItem("showSplashOnce");
+  
+      if (showSplashOnce){
+        navigate("/login", {replace:true})
+        return;
+      }
+  
+      const timer =setTimeout(()=>{
+        localStorage.setItem("showSplashOnce", "true")
+        navigate("/login", {replace: true})
+      }, 2000)
+      return () => clearTimeout(timer);
+    }, [navigate]);
+
+
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(1); 
 

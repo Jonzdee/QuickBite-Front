@@ -20,6 +20,8 @@ import ChefLayout from "./vendor/layout/ChefLayout";
 import AddNewItem from "./vendor/pages/AddNewItem";
 import MyFoodList from "./vendor/pages/MyFoodList";
 import ProductDetails from "./components/landingComponents/ProductDetails";
+import OTP from "./components/login/OTP";
+import ForgetPassword from "./components/login/ForgetPassword";
 
 function App() {
   return (
@@ -44,6 +46,9 @@ function App() {
           <Route path="/getlocation" element={<AllowLocation />} />
           <Route path="/product-details/:id" element={<ProductDetails />} />
           <Route path="/checkout" element={<CheckoutPage />} />
+          <Route path="/otp" element={<OTP />} />
+          <Route path="/forget-password" element={<ForgetPassword />} />
+          
          
          
           {/* Chef routes */}

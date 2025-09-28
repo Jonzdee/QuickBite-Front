@@ -56,7 +56,7 @@ function SignUp({ className, ...props }) {
       localStorage.setItem("token", res.data.token);
     }
 
-    navigate("/getlocation");
+    navigate("/otp");
   } catch (err) {
     console.error(err.response?.data || err.message);
 
@@ -74,9 +74,7 @@ function SignUp({ className, ...props }) {
   } finally {
     setLoading(false);
   }
-};
-
-
+  }
   return (
     <div className="flex min-h-screen items-center justify-center p-4">
       <motion.div
@@ -98,9 +96,7 @@ function SignUp({ className, ...props }) {
             >
               <div className="flex flex-col gap-5">
                 
-                {error && (
-                  <p className="text-red-500 text-sm text-center">{error}</p>
-                )}
+                
 
                 <motion.div
                   className="flex flex-col items-center text-center"
@@ -206,7 +202,9 @@ function SignUp({ className, ...props }) {
                   />
                 </motion.div>
 
-                
+                {error && (
+                  <p className="text-red-500 text-sm text-center">{error}</p>
+                )}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -274,5 +272,4 @@ function SignUp({ className, ...props }) {
     </div>
   );
 }
-
-export default SignUp;
+export default SignUp

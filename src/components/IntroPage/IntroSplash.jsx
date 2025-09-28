@@ -4,19 +4,12 @@ import { motion} from "framer-motion";
 import QuickBiteLogo from "../../assets/Images/QuickBiteLogo.png";
 
 function IntroSplash() {
-  const navigate = useNavigate();
-
+ const navigate = useNavigate();
   useEffect(() => {
-    const showSplashOnce = localStorage.getItem("showSplashOnce");
-
-    if (showSplashOnce){
-      navigate("/intro1", {replace:true})
-      return;
-    }
-
+    
     const timer =setTimeout(()=>{
       localStorage.setItem("showSplashOnce", "true")
-      navigate("/intro1", {replace: true})
+      navigate("/login", {replace: true})
     }, 2000)
     return () => clearTimeout(timer);
   }, [navigate]);
