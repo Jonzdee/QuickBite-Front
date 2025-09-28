@@ -47,6 +47,7 @@ function SignUp({ className, ...props }) {
       email: formData.email,
       phoneNumber: formData.phoneNumber,
       password: formData.password,
+      confirmPassword:formData.confirmPassword
     };
 
     const res = await axios.post(`${API_URL}/users/signup`, payload);
