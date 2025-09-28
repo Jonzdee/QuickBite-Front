@@ -55,8 +55,8 @@ function SignUp({ className, ...props }) {
         localStorage.setItem("token", res.data.token);
       }
 
-      // ✅ Pass email (or phone) to OTP page
-      navigate("/otp", { state: { email: formData.email } });
+      // ✅ Pass phoneNumber to OTP page
+      navigate("/otp", { state: { phoneNumber: formData.phoneNumber } });
     } catch (err) {
       console.error(err.response?.data || err.message);
 
@@ -203,12 +203,10 @@ function SignUp({ className, ...props }) {
                   />
                 </motion.div>
 
-                {/* Error */}
                 {error && (
                   <p className="text-red-500 text-sm text-center">{error}</p>
                 )}
 
-                {/* Submit Button */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}

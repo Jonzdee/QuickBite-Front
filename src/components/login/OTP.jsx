@@ -16,8 +16,8 @@ function OTP() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // ✅ Retrieve email passed from signup
-  const email = location.state?.email;
+  // ✅ Retrieve phone number passed from signup
+  const phoneNumber = location.state?.phoneNumber;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,7 +28,7 @@ function OTP() {
 
       const res = await axios.post(`${API_URL}/users/verify-otp`, {
         otp,
-        email, // ✅ send email with OTP
+        phoneNumber, // ✅ send phone number with OTP
       });
 
       if (res.data.success) {
@@ -66,7 +66,10 @@ function OTP() {
                 OTP Verification
               </h1>
               <p className="text-sm text-muted-foreground text-center">
-                Enter the OTP sent to your email {email && <span className="font-semibold">{email}</span>}
+                Enter the OTP sent to your phone{" "}
+                {phoneNumber && (
+                  <span className="font-semibold">{phoneNumber}</span>
+                )}
               </p>
 
               {error && (
