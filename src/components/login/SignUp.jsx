@@ -20,64 +20,74 @@ function SignUp({ className, ...props }) {
   });
 
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(""); 
   const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
+    setError(""); 
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    if (formData.password !== formData.confirmPassword) {
-      alert("Passwords do not match!");
-      return;
+
+  if (formData.password !== formData.confirmPassword) {
+    setError("Passwords do not match!");
+    return;
+  }
+
+  try {
+    setLoading(true);
+    setError(""); 
+
+    //send backend 
+    const payload = {
+      name: formData.name,
+      email: formData.email,
+      phoneNumber: formData.phoneNumber,
+      password: formData.password,
+    };
+
+    const res = await axios.post(`${API_URL}/users/signup`, payload);
+
+    if (res.data.token) {
+      localStorage.setItem("token", res.data.token);
     }
 
-    try {
-      setLoading(true);
+    navigate("/getlocation");
+  } catch (err) {
+    console.error(err.response?.data || err.message);
 
-      const payload = {
-        name: formData.name,
-        email: formData.email,
-        phoneNumber: formData.phoneNumber,
-        password: formData.password,
-      };
+    let backendError = "Signup failed";
 
-      const res = await axios.post(`${API_URL}/users/signup`, payload);
-
-      // save token to localstorage
-      if (res.data.token) {
-        localStorage.setItem("token", res.data.token);
-      }
-
-      // Auto redirect to get location no need user login again 
-      navigate("/getlocation");
-    } catch (err) {
-      console.error(err.response?.data || err.message);
-      alert(err.response?.data?.message || "Signup failed");
-    } finally {
-      setLoading(false);
+    if (Array.isArray(err.response?.data)) {
+      backendError = err.response.data.join(", ");
+    } else if (err.response?.data?.message) {
+      backendError = err.response.data.message;
+    } else if (typeof err.response?.data === "string") {
+      backendError = err.response.data;
     }
-  };
+
+    setError(backendError);
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   return (
     <div className="flex min-h-screen items-center justify-center p-4">
-      
       <motion.div
         initial={{ opacity: 0, scale: 0.9, y: 30 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <Card
-          className={cn(
-            "w-full max-w-sm overflow-hidden md:max-w-2xl border-none",
-            className
-          )}
+          className={cn("w-full max-w-sm overflow-hidden md:max-w-2xl border-none", className)}
           {...props}
         >
           <CardContent className="grid p-0 md:grid-cols-1">
-            
             <motion.form
               className="p-6 md:p-6"
               onSubmit={handleSubmit}
@@ -86,7 +96,11 @@ function SignUp({ className, ...props }) {
               transition={{ delay: 0.2, duration: 0.6 }}
             >
               <div className="flex flex-col gap-5">
-               
+                
+                {error && (
+                  <p className="text-red-500 text-sm text-center">{error}</p>
+                )}
+
                 <motion.div
                   className="flex flex-col items-center text-center"
                   initial={{ opacity: 0, y: -20 }}
@@ -103,7 +117,7 @@ function SignUp({ className, ...props }) {
                   </p>
                 </motion.div>
 
-              
+                
                 <motion.div
                   className="grid gap-2"
                   initial={{ opacity: 0, x: -20 }}
@@ -139,7 +153,7 @@ function SignUp({ className, ...props }) {
                   />
                 </motion.div>
 
-                
+                {/* Phone */}
                 <motion.div
                   className="grid gap-2"
                   initial={{ opacity: 0, x: -20 }}
@@ -206,7 +220,7 @@ function SignUp({ className, ...props }) {
                   </Button>
                 </motion.div>
 
-               
+                
                 <motion.div
                   className="relative text-center text-xs after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t"
                   initial={{ opacity: 0 }}
@@ -218,7 +232,7 @@ function SignUp({ className, ...props }) {
                   </span>
                 </motion.div>
 
-               
+                
                 <motion.div
                   className="grid grid-cols-2 gap-3"
                   initial={{ opacity: 0, y: 20 }}
@@ -239,7 +253,7 @@ function SignUp({ className, ...props }) {
                   </Button>
                 </motion.div>
 
-               
+                
                 <motion.div
                   className="text-center text-xs"
                   initial={{ opacity: 0 }}
