@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -14,6 +14,10 @@ function OTP() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // ✅ Retrieve email passed from signup
+  const email = location.state?.email;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,8 +26,10 @@ function OTP() {
       setLoading(true);
       setError("");
 
-      // adjust endpoint based on your backend
-      const res = await axios.post(`${API_URL}/users/verify-otp`, { otp });
+      const res = await axios.post(`${API_URL}/users/verify-otp`, {
+        otp,
+        email, // ✅ send email with OTP
+      });
 
       if (res.data.success) {
         navigate("/getlocation"); // or dashboard/home
@@ -60,7 +66,7 @@ function OTP() {
                 OTP Verification
               </h1>
               <p className="text-sm text-muted-foreground text-center">
-                Enter the OTP sent to your email or phone
+                Enter the OTP sent to your email {email && <span className="font-semibold">{email}</span>}
               </p>
 
               {error && (

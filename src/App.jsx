@@ -22,7 +22,10 @@ import MyFoodList from "./vendor/pages/MyFoodList";
 import ProductDetails from "./components/landingComponents/ProductDetails";
 import OTP from "./components/login/OTP";
 import ForgetPassword from "./components/login/ForgetPassword";
-
+import Notifications from "./vendor/pages/Notifications";
+import Profile from "./vendor/pages/Profile";
+import Orders from "./vendor/pages/Orders";
+import Reviews from "./vendor/pages/Reviews";
 function App() {
   return (
     <>
@@ -56,11 +59,10 @@ function App() {
             <Route path="/chef/dashboard" element={<Dashboard />} />
             <Route path="/chef/foods" element={<MyFoodList />} />
             <Route path="/chef/add-food" element={<AddNewItem />} />
-
-            {/*<Route path="/chef/orders" element={<Orders />} />
+            <Route path="/chef/reviews" element={<Reviews />} />
+            <Route path="/chef/orders" element={<Orders />} />
           <Route path="/chef/notifications" element={<Notifications />} />
-          <Route path="/chef/messages" element={<Messages />} />
-          <Route path="/chef/profile" element={<Profile />} />*/}
+          <Route path="/chef/profile" element={<Profile />} />
           </Route>
 
           <Route path="/" element={<Home />} />

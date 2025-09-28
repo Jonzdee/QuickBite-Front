@@ -15,8 +15,8 @@ const navLinks = [
   { to: "/chef/add-food", label: "Add Item", icon: IconPlus },
   { to: "/chef/orders", label: "Orders", icon: IconGrid },
   { to: "/chef/notifications", label: "Notifications", icon: IconBell },
-  { to: "/chef/messages", label: "Messages", icon: IconMessage },
   { to: "/chef/profile", label: "Profile", icon: IconUser },
+  { to: "/chef/reviews", label: "Reviews", icon: IconUser },
 ];
 
 export default function Sidebar() {
