@@ -52,10 +52,23 @@ const [countryCode, setCountryCode] = useState("+234");
          console.log("Signup success:", response.data);
       
          navigate("/vendor-otp", { state: { phoneNumber: formData.phoneNumber } });
-       } catch (error) {
-         console.error("Signup error:", error.response?.data || error.message);
-         alert("Signup failed: " + (error.response?.data?.message || error.message));
-       }
+       }catch (err) {
+      console.error(err.response?.data || err.message);
+
+      let backendError = "Signup failed";
+
+      if (Array.isArray(err.response?.data)) {
+        backendError = err.response.data.join(", ");
+      } else if (err.response?.data?.message) {
+        backendError = err.response.data.message;
+      } else if (typeof err.response?.data === "string") {
+        backendError = err.response.data;
+      }
+
+      setError(backendError);
+    } finally {
+      setLoading(false);
+    }
      };
    
   return (
