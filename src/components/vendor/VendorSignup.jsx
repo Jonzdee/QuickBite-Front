@@ -47,7 +47,7 @@ const [countryCode, setCountryCode] = useState("+234");
    
          console.log("Signup success:", response.data);
       
-         navigate("/otp", { state: { phoneNumber: formData.phoneNumber } });
+         navigate("/vendors-otp", { state: { phoneNumber: formData.phoneNumber } });
        } catch (error) {
          console.error("Signup error:", error.response?.data || error.message);
          alert("Signup failed: " + (error.response?.data?.message || error.message));
