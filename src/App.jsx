@@ -13,6 +13,9 @@ import ChangePassword from "./components/chefInterface/ChangePassword";
 import OrderPage from "./components/chefInterface/OrderPage";
 import Notifications from "./components/chefInterface/Notifications";
 import Messages from "./components/chefInterface/Messages";
+import PrivacyPolicy from "./About/PrivacyPolicy";
+import TermsOfUse from "./About/TermsOfUse";
+
 
 
 
@@ -46,6 +49,8 @@ function App() {
         <Route path="/withdraw-success" element={<WithdrawSuccess />} />
         <Route path="/change-password" element={<ChangePassword />} />
         <Route path="/orders" element={<OrderPage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-use" element={<TermsOfUse />} />
 
         
         
