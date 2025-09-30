@@ -45,6 +45,10 @@ const [countryCode, setCountryCode] = useState("+234");
            confirmPassword:formData.confirmPassword
          });
    
+           if (response.data.token) {
+        localStorage.setItem("token", res.data.token);
+      }
+
          console.log("Signup success:", response.data);
       
          navigate("/vendor-otp", { state: { phoneNumber: formData.phoneNumber } });
