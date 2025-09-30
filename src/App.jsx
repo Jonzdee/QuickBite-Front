@@ -26,6 +26,7 @@ import Notifications from "./vendor/pages/Notifications";
 import Profile from "./vendor/pages/Profile";
 import Orders from "./vendor/pages/Orders";
 import Reviews from "./vendor/pages/Reviews";
+import VendorOtp from "./components/vendor/VendorOtp";
 function App() {
   return (
     <>
@@ -73,6 +74,7 @@ function App() {
           <Route path="/vendors" element={<Page />} />
           <Route path="/riders" element={<RiderPage />} />
           <Route path="/vendor-login" element={<VendorLogin />} />
+          <Route path="/vendor-otp" element={<VendorOtp />} />
           <Route path="/vendor-signup" element={<VendorSignup />} />
           <Route path="/forgot-password" element={<VendorForgotPassword />} />
           <Route path="/getlocation" element={<AllowLocation />} />

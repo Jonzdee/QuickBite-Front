@@ -22,12 +22,6 @@ function OTP() {
   const phoneNumber = location.state?.phoneNumber;
 
   useEffect(() => {
-    if (!phoneNumber) {
-      navigate("/signup");
-    }
-  }, [phoneNumber, navigate]);
-
-  useEffect(() => {
     if (timer <= 0) return;
     const interval = setInterval(() => {
       setTimer((prev) => prev - 1);
@@ -46,13 +40,13 @@ function OTP() {
 
       console.log("Verifying with:", { otp, phoneNumber });
 
-      const res = await axios.post(`${API_URL}/users/verify-otp`, {
+      const res = await axios.post(`${API_URL}/vendors/verify-otp`, {
         otp,
         phoneNumber,
       });
 
       if (res.status === 200) {
-        navigate("/getlocation");
+        navigate("/chef/dashboard");
       }
     } catch (err) {
       console.error(err.response?.data || err.message);
@@ -71,7 +65,7 @@ function OTP() {
 
       console.log("Resending OTP to:", phoneNumber);
 
-      await axios.post(`${API_URL}/users/resend-otp`, { phoneNumber });
+      await axios.post(`${API_URL}/vendors/resend-otp`, { phoneNumber });
 
       setSuccess("OTP resent successfully!");
       setTimer(60);

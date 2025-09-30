@@ -62,8 +62,8 @@ function Footer() {
               <li><Link to="/order-tracking" className="hover:text-orange-400">Order Tracking</Link></li>
               <li><Link to="/refund" className="hover:text-orange-400">Return & Refund</Link></li>
               <li><Link to="/privacy" className="hover:text-orange-400">Privacy Policy</Link></li>
-              <li><Link to="/vendor" className="hover:text-orange-400">Become a Vendor</Link></li>
-              <li><Link to="/rider" className="hover:text-orange-400">Become a Rider</Link></li>
+              <li><Link to="/vendors" className="hover:text-orange-400">Become a Vendor</Link></li>
+              <li><Link to="/riders" className="hover:text-orange-400">Become a Rider</Link></li>
             </ul>
           </div>
 

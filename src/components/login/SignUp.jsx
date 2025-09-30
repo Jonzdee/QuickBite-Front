@@ -55,7 +55,7 @@ function SignUp({ className, ...props }) {
         localStorage.setItem("token", res.data.token);
       }
 
-      // ✅ Pass phoneNumber to OTP page
+      
       navigate("/otp", { state: { phoneNumber: formData.phoneNumber } });
     } catch (err) {
       console.error(err.response?.data || err.message);

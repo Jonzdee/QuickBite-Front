@@ -1,10 +1,16 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Lock, Mail } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import Plate from "@/assets/vendorslogo/plate.png";
 
+import axios from "axios";
+
+const API_URL = import.meta.env.VITE_API_URL; 
 function VendorLogin() {
+  const navigate = useNavigate();
+
+
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-orange-50 via-white to-orange-100 px-6 overflow-hidden">
       
