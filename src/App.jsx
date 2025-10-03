@@ -27,6 +27,15 @@ import Profile from "./vendor/pages/Profile";
 import Orders from "./vendor/pages/Orders";
 import Reviews from "./vendor/pages/Reviews";
 import VendorOtp from "./components/vendor/VendorOtp";
+import Overview from "./components/riders/Overview";
+import Jobs from "./components/riders/Jobs";
+import Earnings from "./components/riders/Earnings";
+import Performance from "./components/riders/Performance";
+import Schedule from "./components/riders/Schedule";
+import Map from "./components/riders/Map";
+import Support from "./components/riders/Support";
+import Inbox from "./components/riders/Inbox";
+import Account from "./components/riders/Acount";
 function App() {
   return (
     <>
@@ -52,18 +61,27 @@ function App() {
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/otp" element={<OTP />} />
           <Route path="/forget-password" element={<ForgetPassword />} />
-          
-         
-         
-          {/* Chef routes */}
+
+          {/* Riders Routes */}
+          <Route path="/overview" element={<Overview />} />
+          <Route path="/jobs" element={<Jobs />} />
+          <Route path="/earnings" element={<Earnings />} />
+          <Route path="/performance" element={<Performance />} />
+          <Route path="/schedule" element={<Schedule />} />
+          <Route path="/map" element={<Map />} />
+          <Route path="/support" element={<Support />} />
+          <Route path="/inbox" element={<Inbox />} />
+          <Route path="/account" element={<Account />} />
+
+          {/* Vendors routes both dashboard/landingpage */}
           <Route element={<ChefLayout />}>
             <Route path="/chef/dashboard" element={<Dashboard />} />
             <Route path="/chef/foods" element={<MyFoodList />} />
             <Route path="/chef/add-food" element={<AddNewItem />} />
             <Route path="/chef/reviews" element={<Reviews />} />
             <Route path="/chef/orders" element={<Orders />} />
-          <Route path="/chef/notifications" element={<Notifications />} />
-          <Route path="/chef/profile" element={<Profile />} />
+            <Route path="/chef/notifications" element={<Notifications />} />
+            <Route path="/chef/profile" element={<Profile />} />
           </Route>
 
           <Route path="/" element={<Home />} />
