@@ -28,7 +28,7 @@ function Overview() {
     {
       id: "#ORD-2847",
       restaurant: "Chicken Republic",
-      customer: "John Doe",
+      customer: "Kemi",
       distance: "2.3 km",
       time: "12 mins",
       amount: 450,
@@ -37,7 +37,7 @@ function Overview() {
     {
       id: "#ORD-2848",
       restaurant: "Dominos Pizza",
-      customer: "Jane Smith",
+      customer: "Raji",
       distance: "3.1 km",
       time: "18 mins",
       amount: 680,

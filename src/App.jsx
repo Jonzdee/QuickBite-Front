@@ -36,6 +36,8 @@ import Map from "./components/riders/Map";
 import Support from "./components/riders/Support";
 import Inbox from "./components/riders/Inbox";
 import Account from "./components/riders/Acount";
+import PrivacyPolicy from "./components/defaultpage/PrivacyPolicy";
+import Terms from "./components/defaultpage/Terms";
 function App() {
   return (
     <>
@@ -61,6 +63,8 @@ function App() {
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/otp" element={<OTP />} />
           <Route path="/forget-password" element={<ForgetPassword />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<Terms />} />
 
           {/* Riders Routes */}
           <Route path="/overview" element={<Overview />} />
