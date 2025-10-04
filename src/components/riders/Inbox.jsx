@@ -17,7 +17,7 @@ function Inbox() {
     {
       id: 1,
       type: "customer",
-      name: "John Doe",
+      name: "Kemi Ogundele",
       orderId: "#ORD-2847",
       lastMessage: "Please ring the doorbell when you arrive",
       time: "2 mins ago",
@@ -28,7 +28,7 @@ function Inbox() {
     {
       id: 2,
       type: "customer",
-      name: "Jane Smith",
+      name: "Walentino",
       orderId: "#ORD-2848",
       lastMessage: "Thank you for the delivery!",
       time: "15 mins ago",
