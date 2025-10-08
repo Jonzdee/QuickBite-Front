@@ -15,6 +15,8 @@ import Notifications from "./components/chefInterface/Notifications";
 import Messages from "./components/chefInterface/Messages";
 import PrivacyPolicy from "./About/PrivacyPolicy";
 import TermsOfUse from "./About/TermsOfUse";
+import RidersLandingPage from "./components/Riders/RidersLandingPage";
+
 
 
 
@@ -51,6 +53,9 @@ function App() {
         <Route path="/orders" element={<OrderPage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-use" element={<TermsOfUse />} />
+        <Route path="/riders-landingpage" element={<RidersLandingPage />} />
+        
+
 
         
         
